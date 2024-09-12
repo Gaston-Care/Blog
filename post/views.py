@@ -19,7 +19,7 @@ class CrearPublicacion(CreateView):
         form.instance.autor = self.request.user
         return super().form_valid(form)
     
-class publicaciones(ListView):
+class Publicaciones(ListView):
     model = Publicacion
     template_name = 'publicaciones.html'
 
