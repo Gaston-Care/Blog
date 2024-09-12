@@ -1,3 +1,4 @@
+from django.db.models.query import QuerySet
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, DeleteView
@@ -17,3 +18,10 @@ class CrearPublicacion(CreateView):
     def form_valid(self, form):
         form.instance.autor = self.request.user
         return super().form_valid(form)
+    
+class publicaciones(ListView):
+    model = Publicacion
+    template_name = 'publicaciones.html'
+
+    def get_queryset(self):
+        return Publicacion.objects.all()

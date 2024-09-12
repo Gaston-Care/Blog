@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Publicaciones - My Website{% endblock %}
+
+{% block header %}
+    <h1 style="margin-top: 50px; margin-bottom: 50px;">Publiaciones</h1>
+{% endblock %}
+
+{% block content %}
+    {% for publicacion in object_list %}
+    <li> {{ publicacion.titulo }}</li>
+    <li> {{ publicacion.fecha_de_publicacion }}</li>
+    <li> {{ publicacion.autor}} </li>
+    <a href="">Ver detalles</a>
+    {% endfor %}
+{% endblock %}
