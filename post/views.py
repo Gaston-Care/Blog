@@ -25,3 +25,11 @@ class Publicaciones(ListView):
 
     def get_queryset(self):
         return Publicacion.objects.all()
+    
+class EliminarPublicacion(DeleteView):
+    model = Publicacion
+    template_name = 'confirmar_eliminacion.html'
+    success_url = reverse_lazy('publicaciones')
+
+    def get_queryset(self):
+        return Publicacion.objects.filter(autor=self.request.user)
