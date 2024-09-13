@@ -4,10 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}My Website{% endblock %}</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'post/styles.css' %}">
     </head>
 
     <body>
-
     <header>
         {% if user.is_authenticated %}
             <p>Hola {{user.username}}</p>
