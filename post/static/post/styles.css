@@ -28,13 +28,12 @@ nav ul a {
 }
 
 .user{
-    text-align: start;
+    text-align: center;
     margin-left: 15px;
 }
 
 header a {
     color: #003366;
-    margin-left: 75px;
 }
 
 body {
@@ -100,12 +99,12 @@ form textarea {
     text-align: center; 
     font-size: 17px; 
     cursor: pointer; 
-    background-color: #e24800;
+    background-color: #003366;
     margin: 15px;
 }
 
 .boton:hover{
-    background-color: #ff5100;
+    background-color: #004c97;
 }
 
 .boton-eliminar {

@@ -12,9 +12,12 @@
     <h3>¿Estas seguro de que quieres eliminar esta publicación?</h3>
     <form method="post">
         {% csrf_token %}
-        <button type="submit">Eliminar</button>
+        <button class="boton-eliminar" type="submit">Eliminar</button>
     </form>
-    <br>
-    <a href="{% url 'publicaciones' %}">Cancelar</a>
+    
+    <form method="get" action="{% url 'publicaciones' %}">
+        {% csrf_token %}
+        <button class="boton" type="submit">Cancelar</button>
+    </form>
 </body>
 </html>
