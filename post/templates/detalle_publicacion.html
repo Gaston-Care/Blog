@@ -10,8 +10,8 @@
     <div class="detalle-publicacion">
         <h1>{{ object.titulo }}</h1>
         <p> {{ object.contenido }}</p>
-        <p>Fecha: {{ object.fecha_de_publicacion }}</p>
-        <p>Autor: {{ object.autor|capfirst }}</p>
+        <p><b>Fecha:</b> {{ object.fecha_de_publicacion }}</p>
+        <p><b>Autor:</b> {{ object.autor|capfirst }}</p>
         <form method="get" action="{% url 'eliminar_publicacion' object.pk %}">
             {% csrf_token %}
             <button class="boton-eliminar" type="submit">Eliminar</button>

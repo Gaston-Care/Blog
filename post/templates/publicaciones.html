@@ -8,10 +8,9 @@
 
 {% block content %}
         {% for publicacion in object_list %}
-            <ul>
-                <li> {{ publicacion.titulo }}</li>
-                <li> {{ publicacion.fecha_de_publicacion }}</li>
-                <li> {{ publicacion.autor}} </li>
+            <ul class="lista-publicaciones">
+                <li><h3> {{ publicacion.titulo }} </h3></li>
+                <li style="font-weight: bold; color: rgb(58, 58, 58);"> {{ publicacion.fecha_de_publicacion }}</li>
                 <form method="get" action="{% url 'detalle_publicacion' publicacion.pk %}">
                     {% csrf_token %}
                     <button class="boton" type="submit">Ver Detalles</button>
