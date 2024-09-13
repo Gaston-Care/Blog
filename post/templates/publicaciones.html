@@ -14,7 +14,7 @@
                 <li> {{ publicacion.autor}} </li>
                 <form method="get" action="{% url 'detalle_publicacion' publicacion.pk %}">
                     {% csrf_token %}
-                    <button type="submit">Ver Detalles</button>
+                    <button class="boton" type="submit">Ver Detalles</button>
                 </form>
             </ul>
         {% endfor %}
