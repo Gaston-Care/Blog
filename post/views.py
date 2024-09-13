@@ -37,4 +37,4 @@ class EliminarPublicacion(DeleteView):
 
 class VerDetallePublicacion(DetailView):
     model = Publicacion
-    template_name = 'ver_detalle_publicacion.html'
+    template_name = 'detalle_publicacion.html'
