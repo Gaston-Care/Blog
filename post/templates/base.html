@@ -10,13 +10,20 @@
 
     <body>
     <header>
-        {% if user.is_authenticated %}
-            <p>Hola {{user.username}}</p>
-            <a href="{% url 'logout' %}">Log out</a>
-        {% else %}
-            <p> No estas loggeado.</p>
-            <a href="{% url 'login' %}">Log In</a>
-        {% endif %}
+        <div class="user">
+            {% if user.is_authenticated %}
+                <p>Hola {{user.username|capfirst}}, Bienvenido!
+                    <br>
+                    <a href="{% url 'logout' %}">Log out</a>
+                </p>
+            {% else %}
+                <p> No estas loggeado.
+                    <br>
+                    <a href="{% url 'login' %}">Log In</a>
+                </p>
+            {% endif %}
+        </div>
+
         <h1>{% block header %}Welcome to My Website{% endblock %}</h1>
     </header>
     
