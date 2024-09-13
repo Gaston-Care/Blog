@@ -10,7 +10,7 @@ from django.views.generic.detail import DetailView
 def home_view(request):
     return render(request, 'home.html')
 
-class CrearPublicacion(CreateView):
+class CrearPublicacion(LoginRequiredMixin, CreateView):
     model = Publicacion
     fields = ['titulo','contenido',]
     template_name = 'crear_publicacion.html'
@@ -27,7 +27,7 @@ class Publicaciones(ListView):
     def get_queryset(self):
         return Publicacion.objects.all()
     
-class EliminarPublicacion(DeleteView):
+class EliminarPublicacion(LoginRequiredMixin, DeleteView):
     model = Publicacion
     template_name = 'confirmar_eliminacion.html'
     success_url = reverse_lazy('publicaciones')

@@ -11,4 +11,8 @@
     <p> {{ object.contenido }}</p>
     <p>fecha: {{ object.fecha_de_publicacion }}</p>
     <p>autor: {{ object.autor }}</p>
+    <form method="get" action="{% url 'eliminar_publicacion' object.pk %}">
+        {% csrf_token %}
+        <button type="submit">Eliminar</button>
+    </form>
 {% endblock %}

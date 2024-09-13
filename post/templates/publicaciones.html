@@ -7,10 +7,15 @@
 {% endblock %}
 
 {% block content %}
-    {% for publicacion in object_list %}
-    <li> {{ publicacion.titulo }}</li>
-    <li> {{ publicacion.fecha_de_publicacion }}</li>
-    <li> {{ publicacion.autor}} </li>
-    <a href="{% url 'detalle_publicacion' publicacion.pk %}">Ver detalles</a>
-    {% endfor %}
+    <ul>
+        {% for publicacion in object_list %}
+            <li> {{ publicacion.titulo }}</li>
+            <li> {{ publicacion.fecha_de_publicacion }}</li>
+            <li> {{ publicacion.autor}} </li>
+            <form method="get" action="{% url 'detalle_publicacion' publicacion.pk %}">
+                {% csrf_token %}
+                <button type="submit">Ver Detalles</button>
+            </form>
+        {% endfor %}
+    </ul>
 {% endblock %}
