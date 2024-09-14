@@ -39,7 +39,11 @@ class VerDetallePublicacion(DetailView):
     model = Publicacion
     template_name = 'detalle_publicacion.html'
 
-class EditarPublicacion(UpdateView):
+class EditarPublicacion(LoginRequiredMixin, UpdateView):
     model = Publicacion
     fields = ['titulo','contenido']
     template_name = 'editar_publicacion.html'
+
+    # Funcion para que solo el Autor de la publicacion pueda editarla.
+    def get_queryset(self):
+        return Publicacion.objects.filter(autor=self.request.user)

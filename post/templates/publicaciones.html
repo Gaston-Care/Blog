@@ -7,6 +7,7 @@
 {% endblock %}
 
 {% block content %}
+    {% if object_list %}
         {% for publicacion in object_list %}
             <ul class="lista-publicaciones">
                 <li><h3> {{ publicacion.titulo }} </h3></li>
@@ -17,4 +18,7 @@
                 </form>
             </ul>
         {% endfor %}
+    {% else %}
+        <p>No hay publicaciones para mostrar.</p>
+    {% endif %}
 {% endblock %}
