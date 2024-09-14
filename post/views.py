@@ -4,6 +4,7 @@ from django.views.generic import CreateView, ListView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from post.models import Publicacion
 from django.views.generic.detail import DetailView
+from django.views.generic.edit import UpdateView
 
 # Create your views here.
 def home_view(request):
@@ -11,7 +12,7 @@ def home_view(request):
 
 class CrearPublicacion(LoginRequiredMixin, CreateView):
     model = Publicacion
-    fields = ['titulo','contenido',]
+    fields = ['titulo','contenido']
     template_name = 'crear_publicacion.html'
     success_url = reverse_lazy('publicaciones')
 
@@ -37,3 +38,8 @@ class EliminarPublicacion(LoginRequiredMixin, DeleteView):
 class VerDetallePublicacion(DetailView):
     model = Publicacion
     template_name = 'detalle_publicacion.html'
+
+class EditarPublicacion(UpdateView):
+    model = Publicacion
+    fields = ['titulo','contenido']
+    template_name = 'editar_publicacion.html'

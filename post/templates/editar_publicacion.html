@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Editar publicacion - My Website{% endblock %}
+
+{% block header %}
+    <h1 style="margin-top: 50px; margin-bottom: 50px;">Editar Publiación</h1>
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="boton" type="submit" value="Editar publiacion">
+    </form>
+
+    <form method="get" action="{% url 'publicaciones' %}">
+        {% csrf_token %}
+        <button class="boton" type="submit">Cancelar</button>
+    </form>
+{% endblock %}
