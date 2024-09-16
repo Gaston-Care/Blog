@@ -118,11 +118,11 @@ form textarea {
     margin: 15px;
 }
 
-.boton:hover{
+.boton:hover {
     background-color: #004c97;
 }
 
-.boton-eliminar{
+.boton-eliminar {
     color: #FFF; 
     font-weight: bold; 
     width: 300px; 
@@ -136,7 +136,7 @@ form textarea {
     margin: 15px;
 }
 
-.boton-eliminar:hover{
+.boton-eliminar:hover {
     background-color: #e60000;
 }
 

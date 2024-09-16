@@ -9,10 +9,6 @@
     </head>
 
     <body>
-        <div class="navbar">
-            {% include 'navbar.html' %}
-        </div>
-
     <header>
         <div class="user">
             {% if user.is_authenticated %}
@@ -21,13 +17,20 @@
                     <a href="{% url 'logout' %}">Log out</a>
                 </p>
             {% else %}
-                <p> No estas loggeado.
+                <p> Usted no está loggeado.
                     <br>
-                    <a href="{% url 'login' %}">Log In</a><br>
+                    <a href="{% url 'login' %}">Iniciar Sesión</a>
+                </p>
+                <p>
                     <a href="{% url 'registro' %}">Registrarse</a>
                 </p>
             {% endif %}
         </div>
+
+        <div class="navbar">
+            {% include 'navbar.html' %}
+        </div>
+
         <h1>{% block header %}Welcome to My Website{% endblock %}</h1>
     </header>
     
