@@ -5,6 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from post.models import Publicacion
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import UpdateView
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 def home_view(request):
@@ -47,3 +48,8 @@ class EditarPublicacion(LoginRequiredMixin, UpdateView):
     # Funcion para que solo el Autor de la publicacion pueda editarla.
     def get_queryset(self):
         return Publicacion.objects.filter(autor=self.request.user)
+    
+class RegistroUsuario(CreateView):
+    template_name = 'registro.html'
+    form_class = UserCreationForm
+    success_url = reverse_lazy('login')

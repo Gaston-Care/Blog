@@ -8,11 +8,20 @@
     <link rel="stylesheet" href="{% static 'post/styles.css' %}">
 </head>
 <body>
+    <div class="navbar">
+        {% include 'navbar.html' %}
+    </div>
+
     <h2>Iniciar Sesion</h2>
+    
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button class="boton" type="submit">Iniciar Sesion</button>
     </form>
+    <p>
+        Si No se ha registrado 
+        <a href="{% url 'registro' %}">Registrarse</a>
+    </p>
 </body>
 </html>

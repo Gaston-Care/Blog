@@ -1,7 +1,7 @@
 ul {
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    margin: 10px;
 }
 
 nav ul {
@@ -16,7 +16,7 @@ nav ul {
 nav ul li {
     margin-right: 20px;
     margin-bottom: 10px;
-    font-size: large;
+    font-size: xx-large;
     font-weight: bold;
 }
 
@@ -49,8 +49,8 @@ body {
 }
 
 h1 {
-    color: #000;
-    margin-top: 25px;
+    color: #FFF;
+    margin-top: 5px;
     margin-bottom: 25px;
 }
 
@@ -122,7 +122,7 @@ form textarea {
     background-color: #004c97;
 }
 
-.boton-rojo {
+.boton-eliminar{
     color: #FFF; 
     font-weight: bold; 
     width: 300px; 
@@ -136,7 +136,7 @@ form textarea {
     margin: 15px;
 }
 
-.boton-rojo:hover{
+.boton-eliminar:hover{
     background-color: #e60000;
 }
 

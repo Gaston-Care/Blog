@@ -8,14 +8,15 @@
 
 {% block content %}
     <div class="detalle-publicacion">
-        <h1>{{ object.titulo }}</h1>
-        <p> {{ object.contenido }}</p>
+        <h1>{{ object.titulo|capfirst }}</h1>
+        <p> {{ object.contenido|capfirst }}</p>
         <p><b>Fecha:</b> {{ object.fecha_de_publicacion }}</p>
         <p><b>Autor:</b> {{ object.autor|capfirst }}</p>
         <form method="get" action="{% url 'eliminar_publicacion' object.pk %}">
             {% csrf_token %}
-            <button class="boton-rojo" type="submit">Eliminar publiacion</button>
+            <button class="boton-eliminar" type="submit">Eliminar publiacion</button>
         </form>
+        
         <form method="post" action="{% url 'editar_publicacion' object.pk %}">
             {% csrf_token %}
             <button class="boton" type="submit">Editar publiacion</button>

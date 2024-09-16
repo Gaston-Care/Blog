@@ -15,6 +15,7 @@
 
     <form method="get" action="{% url 'publicaciones' %}">
         {% csrf_token %}
-        <button class="boton-rojo" type="submit">Cancelar</button>
+
+        <button class="boton-eliminar" type="submit">Cancelar</button>
     </form>
 {% endblock %}
