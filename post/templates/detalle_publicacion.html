@@ -14,7 +14,7 @@
         <p><b>Autor:</b> {{ object.autor|capfirst }}</p>
         <form method="get" action="{% url 'eliminar_publicacion' object.pk %}">
             {% csrf_token %}
-            <button class="boton-eliminar" type="submit">Eliminar publiacion</button>
+            <button class="boton-rojo" type="submit">Eliminar publiacion</button>
         </form>
         <form method="post" action="{% url 'editar_publicacion' object.pk %}">
             {% csrf_token %}

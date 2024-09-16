@@ -122,7 +122,7 @@ form textarea {
     background-color: #004c97;
 }
 
-.boton-eliminar {
+.boton-rojo {
     color: #FFF; 
     font-weight: bold; 
     width: 300px; 
@@ -136,7 +136,7 @@ form textarea {
     margin: 15px;
 }
 
-.boton-eliminar:hover{
+.boton-rojo:hover{
     background-color: #e60000;
 }
 
