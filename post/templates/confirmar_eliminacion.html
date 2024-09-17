@@ -8,16 +8,20 @@
     <link rel="stylesheet" href="{% static 'post/styles.css' %}">
 </head>
 <body style="text-align: center;">
-    <h1> Confirmar Eliminacion</h1>
-    <h3>¿Estas seguro de que quieres eliminar esta publicación?</h3>
-    <form method="post">
-        {% csrf_token %}
-        <button class="boton-eliminar" type="submit">Eliminar</button>
-    </form>
-    
-    <form method="get" action="{% url 'publicaciones' %}">
-        {% csrf_token %}
-        <button class="boton" type="submit">Cancelar</button>
-    </form>
+    <h1 style="margin: 40px;"> Confirmar Eliminacion </h1>
+
+    <div class="fondo-formulario">
+        <h3>¿Estas seguro de que quieres eliminar esta publicación?</h3>
+
+        <form method="post">
+            {% csrf_token %}
+            <button class="boton-eliminar" type="submit">Eliminar</button>
+        </form>
+        
+        <form method="get" action="{% url 'publicaciones' %}">
+            {% csrf_token %}
+            <button class="boton" type="submit">Cancelar</button>
+        </form>
+    </div>
 </body>
 </html>

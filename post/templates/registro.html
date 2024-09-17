@@ -12,15 +12,18 @@
         {% include 'navbar.html' %}
     </div>
 
-    <h2>Registro de Usuario</h2>
+    <h1 style="margin: 40px;">Registro de Usuario</h1>
 
-    <div style="text-align: start;"">
+    <div style="text-align: start;" class="fondo-formulario">
         <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}
-            <button class="boton" type="submit">Registrarse</button>
+            <p style="text-align: center;">
+                <button class="boton" type="submit">Registrarse</button>
+            </p>
         </form>
-        <p>
+        <p style="text-align: center;">
+            <br><br>
             Si ya se ha registrado <a href="{% url 'login' %}">Iniciar Sesión</a>
         </p>
     </div>

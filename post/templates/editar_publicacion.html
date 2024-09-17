@@ -7,15 +7,18 @@
 {% endblock %}
 
 {% block content %}
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input class="boton" type="submit" value="Editar publiacion">
-    </form>
-
-    <form method="get" action="{% url 'publicaciones' %}">
-        {% csrf_token %}
-
-        <button class="boton-eliminar" type="submit">Cancelar</button>
-    </form>
+    <div class="fondo-formulario">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="boton" type="submit" value="Editar publiacion">
+        </form>
+    
+        <form method="get" action="{% url 'publicaciones' %}">
+            {% csrf_token %}
+    
+            <button class="boton-eliminar" type="submit">Cancelar</button>
+        </form>
+    </div>
+    <br><br>
 {% endblock %}
