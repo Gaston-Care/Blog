@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar sesion</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'post/styles.css' %}">
-</head>
-<body>
-    <div class="navbar">
-        {% include 'navbar.html' %}
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Iniciar sesion</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'post/styles.css' %}">
+    </head>
+    <body>
+        <div class="navbar">
+            {% include 'navbar.html' %}
+        </div>
 
-    <h2>Iniciar Sesion</h2>
-    
-    <form method="post" class="fondo-formulario">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="boton" type="submit">Iniciar Sesion</button>
-    </form>
-    <p>
-        Si No se ha registrado 
-        <a href="{% url 'registro' %}">Registrarse</a>
-    </p>
-</body>
+        <h2>Iniciar Sesion</h2>
+        
+        <form method="post" class="fondo-formulario">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="boton" type="submit">Iniciar Sesion</button><br><br>
+
+            <p>
+                Si No se ha registrado 
+                <a href="{% url 'registro' %}">Registrarse</a>
+            </p>
+        </form>
+    </body>
+
+    <br><br>
+    <footer>
+        <p>&copy; 2024 - Blog de Publicaciones - gecare@udc.edu.ar</p>
+    </footer>
 </html>
