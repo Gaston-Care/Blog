@@ -44,6 +44,7 @@ class EditarPublicacion(LoginRequiredMixin, UpdateView):
     model = Publicacion
     fields = ['titulo','contenido']
     template_name = 'editar_publicacion.html'
+    success_url = reverse_lazy('publicaciones')
 
     # Funcion para que solo el Autor de la publicacion pueda editarla.
     def get_queryset(self):
