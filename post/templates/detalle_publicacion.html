@@ -17,7 +17,7 @@
             <button class="boton-eliminar" type="submit">Eliminar publiacion</button>
         </form>
         
-        <form method="post" action="{% url 'editar_publicacion' object.pk %}">
+        <form method="get" action="{% url 'editar_publicacion' object.pk %}">
             {% csrf_token %}
             <button class="boton" type="submit">Editar publiacion</button>
         </form>
